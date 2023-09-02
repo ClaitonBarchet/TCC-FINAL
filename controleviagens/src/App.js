@@ -45,7 +45,7 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
     <p></p>
         <AuthProvider value={{user}}>
           <BrowserRouter>
-          <NavLink color="primary" to= "/"><h4>##CONTROLE DE VIAGENS</h4></NavLink>
+          <NavLink color="primary" to= "/"><h4>CONTROLE DE VIAGENS</h4></NavLink>
 
           <NavLink color="primary" to= "/login"><h5>LOGIN</h5></NavLink>
 

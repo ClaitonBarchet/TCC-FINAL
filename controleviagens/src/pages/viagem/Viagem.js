@@ -28,13 +28,14 @@ const Viagem = () => {
     setFormError("")
 
   // Validar placa
-  // const regexPlaca = /^[a-zA-Z]{3} [0-9]{4}$/;
-  
-  // if (regexPlaca.test(placa)){
-  //   console.log("Placa válida")
+  // var regex = '[a-z]{3}[0-9][0-9a-z][0-9]{2}';
+
+  // if (placa.match(regex)) {
+  //   console.log("placa válida")
   // }else{
-  //   setFormError("Informe uma placa válida")
-  //   console.log("Placa inválida")
+  //   setFormError("Placa inválida")
+  //   console.log(placa)
+  //   console.log(regex)
   // }
 
   // Checar todos os valores
@@ -71,9 +72,8 @@ const Viagem = () => {
   setObservações("")
 
   alert("Viagem registrada com sucesso!")
- // redirect to home page
- navigate("/");
-//  window.location.reload(true);//COMANDO PARA RECARREGAR A PÁGINA
+  navigate("/");
+  // window.location.reload(true);//COMANDO PARA RECARREGAR A PÁGINA
 
 }
 
@@ -156,7 +156,7 @@ const Viagem = () => {
             <Input
             type="value"
             name="material"style={{textTransform:"uppercase"}}
-            autocomplete="off"
+            autocomplete="on"
             required
             placeholder="Material a ser carregado"
             value={material}
@@ -167,13 +167,12 @@ const Viagem = () => {
           {/*VOLUME*/}
           <FormGroup>
           <Label>
-            Volume:
+            Volume (quantidade):
             </Label>
             <Input
-            type="value"
+            type="number"
             name="volume"
-            style={{textTransform:"uppercase"}}
-            autocomplete="off"
+            autocomplete="on"
             required
             placeholder="Volume a ser carregado"
             value={volume}
@@ -187,7 +186,7 @@ const Viagem = () => {
             Hodômetro Inicial:
             </Label>
             <Input
-            type="value"
+            type="number"
             name="hoInicial"
             style={{textTransform:"uppercase"}}
             autocomplete="off"
@@ -204,7 +203,7 @@ const Viagem = () => {
             Hodômetro Final:
             </Label>
             <Input
-            type="value"
+            type="number"
             name="hoFinal"
             style={{textTransform:"uppercase"}}
             autocomplete="off"
@@ -226,7 +225,6 @@ const Viagem = () => {
             style={{textTransform:"uppercase"}}
             autocomplete="off"
             maxlength = "50"
-            // required //OBRIGATORIEDADE DE PREENCHIMENTO
             placeholder=""
             onChange={(e) => setObservações(e.target.value)}
             value={observações}

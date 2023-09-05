@@ -23,17 +23,31 @@ const [editDoc, setEditDoc] = useState([]);
 
 //FILTRO DE PESQUISA
 const search = () => {
-  console.log(user)
-  if (ano === "" || mes === "") {
+
+  if (ano === "") {
     setPostsFiltrados([])
   } else {
+
     let aux = posts.filter(p => { 
-      if(p.data.includes(ano + "-" + mes) && p.ui == user.uid)
+      if(p.data.includes(ano) && p.data.includes(mes)  && p.ui == user.uid)
         return p
       }
+      
     );
     setPostsFiltrados(aux);
   }
+
+  // if (ano === "" || mes === "") {
+  //   setPostsFiltrados([])
+  // } else {
+  //   let aux = posts.filter(p => { 
+  //     if(p.data.includes(ano + "-" + mes) && p.ui == user.uid)
+  //       return p
+  //     }
+  //   );
+  //   setPostsFiltrados(aux);
+  // }
+
 };
 
 //EDIÇÃO

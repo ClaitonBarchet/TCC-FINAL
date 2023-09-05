@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { FormGroup, Label, Form, Input, Card, Button  } from 'reactstrap';
+import { NavLink } from "react-router-dom";
 
 const Cadastrar = () => {
     const [email, setEmail] = useState("")
@@ -109,6 +110,12 @@ const Cadastrar = () => {
             outline
           type="button" onClick={handleSubmit} className="btn">Cadastrar</Button>}
           {loading && (<Button className="btn" disabled>Aguarde...</Button>)}
+          </p>
+
+          <p></p>
+
+          <p>
+          <NavLink color="primary" to= "/login">Voltar</NavLink>
           </p>
 
           {/*SENHAS DIFERENTES*/}

@@ -149,7 +149,7 @@ const Editar = () => {
             Material:
             </Label>
             <Input
-            type="value"
+            type="text"
             name="material"style={{textTransform:"uppercase"}}
             autocomplete="off"
             required
@@ -165,7 +165,7 @@ const Editar = () => {
             Volume:
             </Label>
             <Input
-            type="value"
+            type="number"
             name="volume"
             style={{textTransform:"uppercase"}}
             autocomplete="off"
@@ -182,7 +182,7 @@ const Editar = () => {
             Hodômetro Inicial:
             </Label>
             <Input
-            type="value"
+            type="number"
             name="hoInicial"
             style={{textTransform:"uppercase"}}
             autocomplete="off"
@@ -199,7 +199,7 @@ const Editar = () => {
             Hodômetro Final:
             </Label>
             <Input
-            type="value"
+            type="number"
             name="hoFinal"
             style={{textTransform:"uppercase"}}
             autocomplete="off"

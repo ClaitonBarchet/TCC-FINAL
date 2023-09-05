@@ -98,6 +98,10 @@ try{
           <p></p>
 
           <p>
+          <NavLink color="primary" to= "/cadastrar">Não tenho cadastro</NavLink>
+          </p>
+
+          <p>
           <NavLink color="primary" to= "/alterarsenha">Esqueci minha senha</NavLink>
           </p>
 

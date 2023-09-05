@@ -38,18 +38,16 @@ const Viagem = () => {
   //   console.log(regex)
   // }
 
-  // Checar todos os valores
-
-    if (hoInicial > hoFinal) {
-      setFormError("O Hodômetro inicial não pode ser maior que o Hodômetro final!")
-    }
-
+  if (hoInicial > hoFinal){
+    setFormError("O hodômetro inicial não pode ser maior que o hodômetro final!")
+    console.log("Teste validação ho")
+  }
 
   if (!placa || !carregamento || !cliente || !volume || !hoInicial || !hoFinal || !data){
     setFormError("Por favor, preencha todos os campos!")
   }
 
-  if (formError) return
+  if (formError !== "") return
 
   insertDocument({
     data,
@@ -80,7 +78,6 @@ const Viagem = () => {
   alert("Viagem registrada com sucesso!")
   navigate("/");
   // window.location.reload(true);//COMANDO PARA RECARREGAR A PÁGINA
-
 }
 
     return (
@@ -114,7 +111,7 @@ const Viagem = () => {
             <Input
             type="text"
             name="placa"style={{textTransform:"uppercase"}}
-            autocomplete="off"
+            autocomplete="on"
             required
             placeholder="Placa do veículo"
             onChange={(e) => setPlaca(e.target.value)}
@@ -160,7 +157,7 @@ const Viagem = () => {
             Material (produto):
             </Label>
             <Input
-            type="value"
+            type="text"
             name="material"style={{textTransform:"uppercase"}}
             autocomplete="on"
             required
@@ -240,6 +237,7 @@ const Viagem = () => {
           <p>
             {!response.loading && <Button color="primary" outline className="btn">REGISTRAR</Button>}
             {response.loading && (<button className="btn" disabled>Aguarde...</button>)}
+
             {response.error && <p className="error">{response.error}</p>}
             {formError && <p className="error">{formError}</p>}
           </p>

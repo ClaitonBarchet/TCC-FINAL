@@ -39,6 +39,12 @@ const Viagem = () => {
   // }
 
   // Checar todos os valores
+
+    if (hoInicial > hoFinal) {
+      setFormError("O Hodômetro inicial não pode ser maior que o Hodômetro final!")
+    }
+
+
   if (!placa || !carregamento || !cliente || !volume || !hoInicial || !hoFinal || !data){
     setFormError("Por favor, preencha todos os campos!")
   }

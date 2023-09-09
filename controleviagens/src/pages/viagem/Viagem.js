@@ -109,6 +109,7 @@ const Viagem = () => {
             Data da viagem:
             </Label>
             <Input
+            className = "input"
             type="date"
             name="data"
             style={{textTransform:"uppercase"}}
@@ -125,6 +126,7 @@ const Viagem = () => {
             Placa:
             </Label>
             <Input
+            className = "input"
             type="text"
             name="placa"style={{textTransform:"uppercase"}}
             autocomplete="on"
@@ -141,6 +143,7 @@ const Viagem = () => {
             Carregamento (remetente):
             </Label>
             <Input
+            className = "input"
             type="text"
             name="title"
             style={{textTransform:"uppercase"}}
@@ -157,6 +160,7 @@ const Viagem = () => {
             Cliente (destinatário):
             </Label>
             <Input
+            className = "input"
             type="text"
             name="title"
             style={{textTransform:"uppercase"}}
@@ -173,6 +177,7 @@ const Viagem = () => {
             Material (produto):
             </Label>
             <Input
+            className = "input"
             type="text"
             name="material"style={{textTransform:"uppercase"}}
             autocomplete="on"
@@ -189,6 +194,7 @@ const Viagem = () => {
             Volume (quantidade):
             </Label>
             <Input
+            className = "input"
             type="number"
             name="volume"
             autocomplete="on"
@@ -205,6 +211,7 @@ const Viagem = () => {
             Hodômetro Inicial:
             </Label>
             <Input
+            className = "input"
             type="number"
             name="hoInicial"
             style={{textTransform:"uppercase"}}
@@ -222,6 +229,7 @@ const Viagem = () => {
             Hodômetro Final:
             </Label>
             <Input
+            className = "input"
             type="number"
             name="hoFinal"
             style={{textTransform:"uppercase"}}
@@ -239,6 +247,7 @@ const Viagem = () => {
             Observações:
             </Label>
             <Input
+            className = "input"
             type="textarea"
             name="observações"
             style={{textTransform:"uppercase"}}

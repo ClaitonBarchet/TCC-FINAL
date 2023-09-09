@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
@@ -16,16 +15,19 @@ const Viagem = () => {
   const [ hoInicial, setHoInicial ] = useState("");
   const [ hoFinal, setHoFinal ] = useState("");
   const [ observações, setObservações ] = useState("");
-  const [ formError, setFormError ] = useState("");
+  const [ error, setError ] = useState("");
   const { user} = useAuthValue();
 
   const {response, insertDocument} = useInsertDocument("posts");
 
   const navigate = useNavigate()
   
-  const handleSubmit = (e) => {
+  // var n1 = parseFloat(prompt("Digite um número:")); ABRE CAIXA NA CONSOLE
+
+  // MÉTODO
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormError("")
+    setError(null)
 
   // Validar placa
   // var regex = '[a-z]{3}[0-9][0-9a-z][0-9]{2}';
@@ -38,16 +40,39 @@ const Viagem = () => {
   //   console.log(regex)
   // }
 
-  if (hoInicial > hoFinal){
-    setFormError("O hodômetro inicial não pode ser maior que o hodômetro final!")
-    console.log("Teste validação ho")
+  const hoInicialInt = parseInt (hoInicial)
+  const hoFinalInt = parseInt (hoFinal)
+
+  //FALHA NA COMPARAÇÃO DOS VALORES
+  if (hoInicialInt > hoFinalInt){
+    setError("O hodômetro inicial não pode ser maior que o hodômetro final!")
+    console.log("ERRO Teste validação ho")
+    console.log(hoInicialInt)
+    console.log(hoFinalInt)
+    return;
+  }else if (hoInicialInt < hoFinalInt){
+    setError(null);
+
+    setData("")
+    setPlaca("")
+    setCarregamento("")
+    setCliente("")
+    setMaterial("")
+    setVolume("")
+    setHoInicial("")
+    setHoFinal("")
+    setObservações("")
+    
+    console.log("OK Teste validação ho")
   }
 
   if (!placa || !carregamento || !cliente || !volume || !hoInicial || !hoFinal || !data){
-    setFormError("Por favor, preencha todos os campos!")
+    setError("Por favor, preencha todos os campos!")
+    console.log("ERRO Teste validação preenchimento")
+    return
+  }else{
+    setError (null)       
   }
-
-  if (formError !== "") return
 
   insertDocument({
     data,
@@ -65,23 +90,14 @@ const Viagem = () => {
     observações  
   })
 
-  setData("")
-  setPlaca("")
-  setCarregamento("")
-  setCliente("")
-  setMaterial("")
-  setVolume("")
-  setHoInicial("")
-  setHoFinal("")
-  setObservações("")
-
   alert("Viagem registrada com sucesso!")
   navigate("/");
   // window.location.reload(true);//COMANDO PARA RECARREGAR A PÁGINA
-}
+};
 
     return (
       <div>
+
         <div className="d-flex justify-content-center">
         <Card style={{width: '18rem'}}>
         <Form onSubmit={handleSubmit} className="ms-2 me-2">
@@ -238,8 +254,8 @@ const Viagem = () => {
             {!response.loading && <Button color="primary" outline className="btn">REGISTRAR</Button>}
             {response.loading && (<button className="btn" disabled>Aguarde...</button>)}
 
-            {response.error && <p className="error">{response.error}</p>}
-            {formError && <p className="error">{formError}</p>}
+            {/* {response.error && <p className="error">{response.error}</p>} */}
+            {error && <p className="error">{error}</p>}
           </p>
 
           </Form>

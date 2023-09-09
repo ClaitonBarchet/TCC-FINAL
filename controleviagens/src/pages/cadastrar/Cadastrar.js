@@ -31,6 +31,8 @@ const Cadastrar = () => {
         if(password == ("")){
           setError("Informe uma senha!")
         return;     
+        }else{
+        setError ("")       
         }
 
         if (error == null){
@@ -105,9 +107,7 @@ const Cadastrar = () => {
 
           {/*CADASTRAR*/}
           <p>
-          {!loading && <Button
-            color="primary"
-            outline
+          {!loading && <Button color="primary" outline
           type="button" onClick={handleSubmit} className="btn">Cadastrar</Button>}
           {loading && (<Button className="btn" disabled>Aguarde...</Button>)}
           </p>

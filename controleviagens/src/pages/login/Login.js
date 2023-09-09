@@ -54,7 +54,7 @@ try{
                   Email:
                 </Label>
                 <Input
-                   className = "input" 
+                   className = "input"
                    type="email"
                    name="email"
                    style={{textTransform:"uppercase"}}

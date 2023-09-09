@@ -40,7 +40,9 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
      return<p>Carregando...</p>
    }
 
-  return (<div>
+  return (<div style={{ 
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/Wallpaper.png'})` 
+  }}>
     <body>
     <p></p>
         <AuthProvider value={{user}}>

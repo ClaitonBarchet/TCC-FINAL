@@ -45,7 +45,7 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
     <p></p>
         <AuthProvider value={{user}}>
           <BrowserRouter>
-          <NavLink color="primary" to= "/"><h4>#CONTROLE DE VIAGENS#</h4></NavLink>
+          {/* <NavLink color="primary" to= "/"><h4>#CONTROLE DE VIAGENS#</h4></NavLink>
 
           <NavLink color="primary" to= "/login"><h5>LOGIN</h5></NavLink>
 
@@ -55,9 +55,14 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
 
           <NavLink color="primary" to= "/about"><h5>SOBRE</h5></NavLink>
 
-          <NavLink color="primary" onClick={logout} ><h5>SAIR</h5></NavLink>
+          <NavLink color="primary" onClick={logout} ><h5>SAIR</h5></NavLink> */}
 
-                {/* <nav className="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+
+
+
+          {/* NAVBAR */}
+
+               <nav className="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
                     <div className="container-fluid">
                     <button className="navbar-toggler" 
                               type="button" 
@@ -109,7 +114,7 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
                       </ul>
                     </div>
                   </div>
-                </nav> */}
+                </nav>
 
 
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FormGroup, Label, Form, Input, Card, Button  } from 'reactstrap';
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { NavLink } from "react-router-dom";
+import styles from "./Login.css";
 
 const Login = () => {
     const [ displayName, setDisplayName] = useState ("")
@@ -24,22 +25,10 @@ const Login = () => {
         // console.log(emailconcatenado)
 try{
         const res = await login(user)
-        // console.log(user)
-        console.log(error.code)
-        console.log(error.message)
-         console.log(typeof error.message)
 } catch (error) {
     // ERRO SENHA ERRADA, ARRUMAR - QUAL O CODIGO DO ERRO?
-        console.log("ESTOU AQUI")
-         console.log(error.message)
-         console.log(typeof error.message)
-         console.log(systemErrorMessage)
 
          let systemErrorMessage
-
-        // setLoading(false);
-        // setError(systemErrorMessage);
-        // console.log(systemErrorMessage)
 
         if(error.code === "auth/weak-password"){
           systemErrorMessage  = "A senha não confere.";
@@ -47,11 +36,13 @@ try{
   }
   }
 
+  // <div className={styles.home}>
+
   return (
-    <div>
+    <div className="container">
       <div className="container">
         <div className="d-flex justify-content-center">
-          <Card style={{width: '18rem'}}>
+          <Card style={{ width: '18rem'}}>
             
             <Form onSubmit={handleSubmit} className="ms-2 me-2">
 
@@ -63,6 +54,7 @@ try{
                   Email:
                 </Label>
                 <Input
+                   className = "input" 
                    type="email"
                    name="email"
                    style={{textTransform:"uppercase"}}
@@ -79,6 +71,7 @@ try{
                 Senha:
                 </Label>
                 <Input
+                   className = "input" 
                    type="password"
                    name="password"
                    required

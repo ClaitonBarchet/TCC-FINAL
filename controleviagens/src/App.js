@@ -41,7 +41,7 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
    }
 
   return (<div style={{ 
-    backgroundImage: `url(${process.env.PUBLIC_URL + '/Wallpaper.png'})` 
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/Wallpaper.jpg'})` 
   }}>
     <body>
     <p></p>

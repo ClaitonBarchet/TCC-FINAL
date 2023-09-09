@@ -96,7 +96,8 @@ const Viagem = () => {
 };
 
     return (
-      <div>
+      // <div>
+      <div style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container">
 
         <div className="d-flex justify-content-center">
         <Card style={{width: '18rem'}}>

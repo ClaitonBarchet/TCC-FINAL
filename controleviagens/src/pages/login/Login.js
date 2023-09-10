@@ -39,7 +39,8 @@ try{
   // <div className={styles.home}>
 
   return (
-    <div style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container">
+    <div>
+    {/* <div style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container"> */}
       <div className="container">
         <div className="d-flex justify-content-center">
           <Card style={{ width: '18rem'}}>

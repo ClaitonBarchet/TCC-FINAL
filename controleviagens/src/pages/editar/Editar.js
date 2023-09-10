@@ -85,6 +85,7 @@ const Editar = () => {
             Data da viagem:
             </Label>
             <Input
+            className = "input"
             type="date"
             name="data"
             style={{textTransform:"uppercase"}}
@@ -101,6 +102,7 @@ const Editar = () => {
             Placa:
             </Label>
             <Input
+            className = "input"
             type="text"
             name="placa"style={{textTransform:"uppercase"}}
             autocomplete="off"
@@ -117,6 +119,7 @@ const Editar = () => {
             Carregamento:
             </Label>
             <Input
+            className = "input"
             type="text"
             name="title"
             style={{textTransform:"uppercase"}}
@@ -133,6 +136,7 @@ const Editar = () => {
             Cliente:
             </Label>
             <Input
+            className = "input"
             type="text"
             name="title"
             style={{textTransform:"uppercase"}}
@@ -149,6 +153,7 @@ const Editar = () => {
             Material:
             </Label>
             <Input
+            className = "input"
             type="text"
             name="material"style={{textTransform:"uppercase"}}
             autocomplete="off"
@@ -165,6 +170,7 @@ const Editar = () => {
             Volume:
             </Label>
             <Input
+            className = "input"
             type="number"
             name="volume"
             style={{textTransform:"uppercase"}}
@@ -182,6 +188,7 @@ const Editar = () => {
             Hodômetro Inicial:
             </Label>
             <Input
+            className = "input"
             type="number"
             name="hoInicial"
             style={{textTransform:"uppercase"}}
@@ -199,6 +206,7 @@ const Editar = () => {
             Hodômetro Final:
             </Label>
             <Input
+            className = "input"
             type="number"
             name="hoFinal"
             style={{textTransform:"uppercase"}}
@@ -216,6 +224,7 @@ const Editar = () => {
             Observações:
             </Label>
             <Input
+            className = "input"
             type="textarea"
             name="observações"
             style={{textTransform:"uppercase"}}

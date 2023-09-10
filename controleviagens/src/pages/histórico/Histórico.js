@@ -125,7 +125,7 @@ const search = () => {
         
         {loading && <p>Carregando...</p>}
 
-        <Button color="success" type="button" onClick={search} className="btn">Carregar</Button>
+        <Button color="primary" type="button" onClick={search} className="btn">Carregar</Button>
 
           {/* TABELA - CABEÇALHO */}
 
@@ -160,9 +160,7 @@ const search = () => {
                 <td>{post.observações}</td>
                 <td>
 
-                <li className="nav-item">
                 <NavLink to= "/Editar" state={{post}} className = {"btn btn-warning"} onClick={()=>editar(post)}>  EDITAR  </NavLink>
-                </li>
                 
                 </td>
                 <td><button  className="btn btn-danger" onClick={()=>deletar(post.id)}> X </button></td>

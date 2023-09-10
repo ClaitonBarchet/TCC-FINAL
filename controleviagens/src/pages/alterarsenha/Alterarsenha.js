@@ -40,6 +40,7 @@ function recuperarSenha(){
             Email:
           </Label>
             <Input
+              className = "input"
               type="email"
               name="email"
               style={{textTransform:"uppercase"}}

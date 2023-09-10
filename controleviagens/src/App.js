@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import styles from "react"
 
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -43,9 +42,8 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
    }
 
    return (
-  //  <div>
 
- <div style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container">
+ <div data-bs-theme="dark" style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container">
 
     <body>
     <p></p>
@@ -64,17 +62,17 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
 
                       <Dropdown.Menu>
 
-                        <Dropdown.Divider />
-                          {!user && (<Dropdown.Item href="/login">LOGIN</Dropdown.Item>)}
-                          {!user && (<Dropdown.Item href="/cadastrar">CADASTRO</Dropdown.Item>)}
-                          {user && (<Dropdown.Item href="/histórico">HISTÓRIO</Dropdown.Item>)}
-                          {user && (<Dropdown.Item href="/viagem">NOVA VIAGEM</Dropdown.Item>)}
-                        <Dropdown.Divider />
-                          {user && (<Dropdown.Item onClick={logout}>SAIR</Dropdown.Item>)}
+                          <Dropdown.Divider />
+                            {!user && (<Dropdown.Item href="/login">LOGIN</Dropdown.Item>)}
+                            {!user && (<Dropdown.Item href="/cadastrar">CADASTRO</Dropdown.Item>)}
+                            {user && (<Dropdown.Item href="/histórico">HISTÓRIO</Dropdown.Item>)}
+                            {user && (<Dropdown.Item href="/">NOVA VIAGEM</Dropdown.Item>)}
+                          <Dropdown.Divider />
+                            {user && (<Dropdown.Item onClick={logout}>SAIR</Dropdown.Item>)}
 
-                      </Dropdown.Menu>
+                        </Dropdown.Menu>
 
-                    </Dropdown>
+                      </Dropdown>
 
                     <div className="collapse navbar-collapse" id="navbarNav">
                       <ul className="navbar-nav">
@@ -85,8 +83,6 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
                 </nav>
 
           {/*FIM NAVBAR */}
-
-
 
           <Routes>
             <Route  path="/" element={user ? <Viagem /> : <Navigate to="/Login" />} />

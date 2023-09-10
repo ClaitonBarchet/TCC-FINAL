@@ -54,8 +54,9 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
 
                <nav className="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
                     <div className="container-fluid">
-                      
+                    
                     <Dropdown>
+
                       <Dropdown.Toggle variant="primary" id="dropdown-basic">
                         OPÇÕES
                       </Dropdown.Toggle>

@@ -43,7 +43,8 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
 
    return (
 
- <div data-bs-theme="dark" style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container">
+//  <div data-bs-theme="dark" style={{ backgroundImage: "url(/Wallpaper.jpg)" }} className="container">
+ <div data-bs-theme="light"  className="container">
 
     <body>
     <p></p>
@@ -52,7 +53,8 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
 
           {/* NAVBAR */}
 
-               <nav className="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+               {/* <nav className="navbar bg-primary navbar-expand-lg" data-bs-theme="dark"> */}
+               <nav className="navbar bg-primary navbar-expand-lg" data-bs-theme="light">
                     <div className="container-fluid">
                     
                     <Dropdown>

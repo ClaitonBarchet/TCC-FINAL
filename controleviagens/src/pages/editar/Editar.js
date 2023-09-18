@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
@@ -9,7 +8,6 @@ import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 const Editar = () => {
   const location = useLocation();
   const dados = location.state.post
-
   const [id] = useState(dados.id)
   const [data, setData ] = useState(dados.data);
   const [placa, setPlaca ] = useState(dados.placa);
@@ -21,23 +19,38 @@ const Editar = () => {
   const [hoFinal, setHoFinal ] = useState(dados.hoFinal);
   const [observações, setObservações ] = useState(dados.observações);
 
-  const [formError, setFormError] = useState("");
+  const [error, setError] = useState("");
   const {user} = useAuthValue();
 
   const {updateDocument, response} = useUpdateDocument("posts");
 
   const navigate = useNavigate()
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    setFormError("")
-    
+    setError(null)
+
+  const hoInicialInt = parseInt (hoInicial)
+  const hoFinalInt = parseInt (hoFinal)
+
+  //FALHA NA COMPARAÇÃO DOS VALORES
+  if (hoInicialInt > hoFinalInt){
+    setError("O hodômetro inicial não pode ser maior que o hodômetro final!")
+    console.log("ERRO Teste validação ho")
+    console.log(hoInicialInt)
+    console.log(hoFinalInt)
+    return;
+  }else if (hoInicialInt < hoFinalInt){
+    setError(null);
+
+    console.log("OK Teste validação ho")
+  }
   // checar todos os valores
   if (!placa || !carregamento || !cliente || !volume || !hoInicial || !hoFinal || !data){
-    setFormError("Por favor, preencha todos os campos!")
+    setError("Por favor, preencha todos os campos!")
+  }else{
+    setError (null)       
   }
-
-  if (formError) return
 
     updateDocument({
     id,
@@ -242,7 +255,7 @@ const Editar = () => {
           
           {response.error && <p className="error">{response.error}</p>}
 
-          {formError && <p className="error">{formError}</p>}
+          {error && <p className="error">{error}</p>}
           </p>
 
              </Form>

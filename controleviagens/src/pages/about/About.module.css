@@ -6,12 +6,12 @@
 }
 
 .about p {
-    color: #aaaaaa;
-    margin-bottom: 2em;
+    color: #ffffff;
+    margin-bottom: 1em;
 }
 
 .about a {
     display: block;
-    margin-top: 15px;
-    padding: 10px 15px;
+    margin-top: 1px;
+    padding: 1000px 1px;
 }

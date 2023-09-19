@@ -7,11 +7,11 @@
 
 .about p {
     color: #ffffff;
-    margin-bottom: 1em;
+    margin-bottom: 10em;
 }
 
 .about a {
     display: block;
-    margin-top: 1px;
-    padding: 1000px 1px;
+    margin-top: -100px;
+    padding: 500px 1px;
 }

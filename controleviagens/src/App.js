@@ -68,7 +68,7 @@ import Alterarsenha from "./pages/alterarsenha/Alterarsenha";
                           <Dropdown.Divider />
                             {!user && (<Dropdown.Item href="/login">LOGIN</Dropdown.Item>)}
                             {!user && (<Dropdown.Item href="/cadastrar">CADASTRO</Dropdown.Item>)}
-                            {user && (<Dropdown.Item href="/histórico">HISTÓRIO</Dropdown.Item>)}
+                            {user && (<Dropdown.Item href="/histórico">HISTÓRICO</Dropdown.Item>)}
                             {user && (<Dropdown.Item href="/">NOVA VIAGEM</Dropdown.Item>)}
                             {(<Dropdown.Item href="/about">SOBRE</Dropdown.Item>)}
                           <Dropdown.Divider />
